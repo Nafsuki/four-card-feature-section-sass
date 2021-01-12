@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap');
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+$very-dark-blue: hsl(234, 12%, 34%);
+$grayish-blue: hsl(229, 6%, 66%);
+$very-light-gray: hsl(0, 0%, 98%);
+$font-family: 'Poppins', sans-serif;
+
+// GENERL SETTINGS
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-size: 1.5rem;
+  color: $grayish-blue;
+  background-color: $very-light-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// CONTENTS
+header {
+  width: 58rem;
+  text-align: center;
+  margin: 6rem auto;
+  h1 {
+    margin: 0;
+    font-size: 4rem;
+  }
+  h1:nth-child(1) {
+    font-weight: 200;
+  }
+  h1:nth-child(2) {
+    color: $very-dark-blue;
+    font-size: 4.1rem;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 200;
+    margin: 1rem 0 0 0;
+  }
+}
+.container {
+  display: grid;
+  margin-bottom: 8rem;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 2.5rem;
+  grid-template-areas:
+    '.     card2     .'
+    'card1 card2 card4'
+    'card1 card3 card4'
+    '.     card3 .    ';
+  .card {
+    width: 38rem;
+    height: 26rem;
+    border-radius: 0.8rem;
+    box-shadow: 0.5rem 1rem 2.5rem 0.1rem $grayish-blue;
+    position: relative;
+    h2 {
+      color: $very-dark-blue;
+      margin: 3rem 3rem 1rem;
+    }
+    p {
+      margin: 1rem 3rem 1rem;
+    }
+    img {
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+    }
+    &-1 {
+      grid-area: card1;
+      border-top: 0.5rem solid $cyan;
+    }
+    &-2 {
+      grid-area: card2;
+      border-top: 0.5rem solid $red;
+    }
+    &-3 {
+      grid-area: card3;
+      border-top: 0.5rem solid $orange;
+    }
+    &-4 {
+      grid-area: card4;
+      border-top: 0.5rem solid $blue;
+    }
+  }
+}
+
+@media (max-width: 1225px) {
+  header {
+    width: 53rem;
+    margin: 8rem auto;
+    h1 {
+      font-size: 3.5rem;
+    }
+    h1:nth-child(2) {
+      font-size: 3.6rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  .container {
+    margin-bottom: 8rem;
+    .card {
+      width: 32rem;
+      height: 22rem;
+      h2 {
+        font-size: 2rem;
+        margin: 2.5rem 2.5rem 1rem;
+      }
+      p {
+        font-size: 1.3rem;
+        margin: 1rem 2.5rem 1rem;
+      }
+      img {
+        width: 5rem;
+        bottom: 2.5rem;
+        right: 2.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1030px) {
+  header {
+    width: 52rem;
+    margin: 8rem auto;
+    h1 {
+      font-size: 3.2rem;
+    }
+    h1:nth-child(2) {
+      font-size: 3.3rem;
+    }
+    h3 {
+      font-size: 1.4rem;
+    }
+  }
+  .container {
+    margin-bottom: 8rem;
+    .card {
+      width: 28rem;
+      height: 20rem;
+      h2 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      img {
+        width: 4.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  body {
+    overflow-y: scroll;
+  }
+  header {
+    h1 {
+      font-size: 3.8rem;
+    }
+    h1:nth-child(2) {
+      font-size: 3.9rem;
+    }
+    h3 {
+      font-size: 1.8rem;
+    }
+  }
+  .container {
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 0;
+    grid-template-areas:
+      'card1'
+      'card2'
+      'card3'
+      'card4';
+    .card {
+      min-width: 52rem;
+      height: 25rem;
+      margin: 2rem auto;
+      h2 {
+        font-size: 2.2rem;
+        margin: 3rem 3rem 1rem;
+      }
+      p {
+        font-size: 1.6rem;
+        margin: 1rem 3rem 1rem;
+      }
+      img {
+        width: 12%;
+        bottom: 3rem;
+        right: 3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 570px) {
+  body {
+    min-width: 100vw;
+  }
+  header {
+    width: 85vw;
+    h1 {
+      font-size: 2.5rem;
+    }
+    h1:nth-child(2) {
+      font-size: 2.6rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  .container {
+    width: 85vw;
+    height: auto;
+    .card {
+      margin-top: 0;
+      margin-bottom: 2.5rem;
+      min-width: 100%;
+      height: 25rem;
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.4rem;
+        margin: 1rem 3rem 1rem;
+      }
+      img {
+        width: 20%;
+        bottom: 3rem;
+        right: 3rem;
+      }
+    }
+  }
+}
